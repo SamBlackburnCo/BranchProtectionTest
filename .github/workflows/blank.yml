@@ -13,11 +13,6 @@ jobs:
     environment: live
     steps:
       - uses: actions/checkout@v3
-      - name: Show that we have access to the secret and environment variable
-        env: 
-          super_secret: ${{ secrets.SUPER_SECRET_THING }}
-          env_var: ${{ vars.LIVE_ENVIRONMENT_VARIABLE }}
-        run: echo $super_secret $env_var
       - name: Update version.txt
         env:
           GH_TOKEN: ${{ github.token }}
